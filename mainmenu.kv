@@ -1,0 +1,61 @@
+MainWdget:
+
+<MainWdget>:
+    orientation: 'vertical'
+    BoxLayout:
+        padding: [10, 10, 10, 10]
+        Spinner:
+            text: root.label1
+            id: spinner_id
+            values: ["USD", "PLN", "GBP", "EUR", "NOK", "SEK"]
+        TextInput:
+            text: root.default_value
+            multiline: False
+            input_type: 'number'
+            input_filter: 'float'
+            size_hint: (.4, None)
+            height: 30
+            pos_hint: {'center_x': .5, 'center_y': .5}
+            background_color: (1, 1, 1, .1)
+            foreground_color: (1, 1, 1, 1)
+            id: value1
+
+    BoxLayout:
+
+        padding: [10, 10, 10, 10]
+        Label:
+            text: root.label2
+        Label:
+            text: root.default_value
+            id: value2
+
+    BoxLayout:
+        padding: [10, 10, 10, 10]
+        Label:
+            text: root.label3
+        Label:
+            text: root.default_value
+            id: value3
+
+    BoxLayout:
+        padding: [10, 10, 10, 10]
+        Label:
+            text: root.label4
+        Label:
+            text: root.default_value
+            id: value4
+
+    BoxLayout:
+        padding: [10, 10, 10, 10]
+        Label:
+            text: root.label5
+            pos_hint: {'center_x': .1, 'center_y': .5}
+        Label:
+            text: root.default_value
+            id: value5
+
+    BoxLayout:
+        Button:
+            text: 'Przelicz'
+            on_release: root.count_this()
+            background_color: (.5, 1, .5, 1)

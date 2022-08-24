@@ -1,4 +1,3 @@
-# from forex_python.converter import CurrencyRates
 from kivy.app import App
 from kivy.properties import StringProperty
 from kivy.uix.boxlayout import BoxLayout

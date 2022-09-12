@@ -3,11 +3,8 @@ MainWdget:
 <MainWdget>:
     orientation: 'vertical'
     BoxLayout:
-        padding: [10, 10, 10, 10]
-        Spinner:
-            text: root.label1
-            id: spinner_id
-            values: ["USD", "PLN", "GBP", "EUR", "NOK", "SEK"]
+        Label:
+            text: "USD"
         TextInput:
             text: root.default_value
             multiline: False
@@ -19,10 +16,10 @@ MainWdget:
             background_color: (1, 1, 1, .1)
             foreground_color: (1, 1, 1, 1)
             id: value1
+            #on_text: root.count_real_time()
 
     BoxLayout:
 
-        padding: [10, 10, 10, 10]
         Label:
             text: root.label2
         Label:
@@ -30,7 +27,7 @@ MainWdget:
             id: value2
 
     BoxLayout:
-        padding: [10, 10, 10, 10]
+
         Label:
             text: root.label3
         Label:
@@ -38,7 +35,7 @@ MainWdget:
             id: value3
 
     BoxLayout:
-        padding: [10, 10, 10, 10]
+
         Label:
             text: root.label4
         Label:
@@ -46,7 +43,7 @@ MainWdget:
             id: value4
 
     BoxLayout:
-        padding: [10, 10, 10, 10]
+
         Label:
             text: root.label5
             pos_hint: {'center_x': .1, 'center_y': .5}
@@ -55,7 +52,12 @@ MainWdget:
             id: value5
 
     BoxLayout:
+        Spinner:
+            text: root.label1
+            id: spinner_id
+            values: ["Binance-us", "Bittrex", "Kraken"]
+            on_text: root.spinner_chose(spinner_id.text)
         Button:
-            text: 'Przelicz'
+            text: 'Count'
             on_release: root.count_this()
             background_color: (.5, 1, .5, 1)
